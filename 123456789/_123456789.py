@@ -9,6 +9,10 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 
+from treelib import Tree, Node
+
+global a
+a = []
 def FileChoose():
     root = tkinter.Tk()    # 创建一个Tkinter.Tk()实例
     root.withdraw()       # 将Tkinter.Tk()实例隐藏
@@ -31,15 +35,21 @@ def getfilepath(file_path_):
 def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         xy = "%d,%d" % (x, y)
+        a.append(xy)
         print(xy)
         cv2.circle(img, (x, y), 1, (255, 0, 0), thickness = -1)
         cv2.putText(img, xy, (x, y), cv2.FONT_HERSHEY_PLAIN,
                     1.0, (0,0,0), thickness = 1)
         cv2.imshow("image", img)
+        
+
 
 if __name__ == "__main__":
+    
+    tree = Tree()
     path = FileChoose()
     getfilepath(path)
+    print(a)
     
 
 
