@@ -47,6 +47,7 @@ def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
 if __name__ == "__main__":
     
     tree = Tree()
+    tree.show()
     path = FileChoose()
     getfilepath(path)
     print(a)
