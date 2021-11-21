@@ -31,9 +31,22 @@ class surface(object):                          # 所有法向量都應由用戶
     #    print(col_.shape)
 
 
+class furniture_group(object):
+    def __init__(self, *args, **kwargs):
+                                #对角点坐标
+        point1_x = x1
+        point1_y = y1
+
+        point2_x = x2
+        point2_y = y2
+
+        theta_ = theta          #组方向
+
+        grouptype = type_       #组属性
 
 
-class furniture(object):
+
+class furniture(furniture_group):
     pass
 
 class door(furniture):
