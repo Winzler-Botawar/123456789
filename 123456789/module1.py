@@ -44,9 +44,15 @@ class furniture_group(object):
 
         grouptype = type_       #组属性
 
+    def barycenter():
+         pass
+
 
 
 class furniture(furniture_group):
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+
     pass
 
 class door(furniture):
@@ -57,6 +63,7 @@ def init_energy_function(p1,p2,*door):
 
 
 if __name__ == "__main__":
+
     #plt.figure(figsize=(5, 5)) #设置坐标轴的大小
     #plt.title("Room Coordinate")  #设置标题
     #plt.show()  #展示
