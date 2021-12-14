@@ -1,4 +1,4 @@
-
+import math
 import numpy as np
 
 #fig = plt.figure(figsize=(6,6))\
@@ -55,6 +55,17 @@ class furniture_group(furniture):
         self.items.append(item)
         self.positions.append(position)
         self.orientations.append(orientation)
+
+    def rotate(self, theta):
+        self.theta_ = self.theta_ + theta
+        self.p1_x = (self.p1_x - self.center_point[0])*math.cos(theta) - (self.p1_y - self.center_point[1])*math.sin(theta) + self.center_point[0]
+        self.p1_y = (self.p1_x - self.center_point[0])*math.sin(theta) - (self.p1_y - self.center_point[1])*math.cos(theta) + self.center_point[1]
+        self.p2_x = (self.p2_x - self.center_point[0])*math.cos(theta) - (self.p2_x - self.center_point[1])*math.sin(theta) + self.center_point[0]
+        self.p2_y = (self.p2_y - self.center_point[0])*math.sin(theta) - (self.p2_y - self.center_point[1])*math.cos(theta) + self.center_point[1]
+
+    def translate(self, *args):
+        pass
+
 
     def barycenter():
          pass
