@@ -49,7 +49,9 @@ if __name__ == "__main__":
     tree = Tree()
     tree.show()
     path = FileChoose()
+    
     getfilepath(path)
+    
     print(a)
     
 

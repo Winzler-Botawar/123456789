@@ -1,5 +1,4 @@
 
-import matplotlib.pyplot as plt
 import numpy as np
 
 #fig = plt.figure(figsize=(6,6))\
@@ -30,30 +29,39 @@ class surface(object):                          # 所有法向量都應由用戶
     #    col_, row_ = np.meshgrid(np.arange(self.col),np.arange(self.row))
     #    print(col_.shape)
 
+class furniture(object):
+    def __init__(self, type_, p1, p2, orientation):
+        self.type_ = type_
+        self.length = p1.x - p2.x
+        self.width = p1.y - p2.y
+        self.orientation = orientation
+    pass
 
-class furniture_group(object):
-    def __init__(self, *args, **kwargs):
-                                #对角点坐标
-        point1_x = x1
-        point1_y = y1
+class furniture_group(furniture):
+    def __init__(self, items=[], positions=[], orientations=[], ):
+        self.items = items
+        self.positions = positions
+        self.orientations = orientations
 
-        point2_x = x2
-        point2_y = y2
 
-        theta_ = theta          #组方向
+    def add_item(self, item, position, orientation):
+        """
+        adds item to the GeoItems
+        :param item: item object
+        :param position: (x,y)
+        :param orientation: angle
 
-        grouptype = type_       #组属性
+        """
+        self.items.append(item)
+        self.positions.append(position)
+        self.orientations.append(orientation)
 
     def barycenter():
          pass
 
 
 
-class furniture(furniture_group):
-    def __init__(self, *args, **kwargs):
-        super().__init__()
 
-    pass
 
 class door(furniture):
     pass
